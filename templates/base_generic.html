@@ -1,0 +1,38 @@
+
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block body%}
+
+    <!-- bradcam_area  -->
+    <div class=" bradcam_bg_1" style="
+    background-size: cover;
+    background-position: center;
+    padding: 205px 0 120px 0;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    background-size: cover;
+">
+        {% comment %} <img src="{% static 'img/logo .png' %}" alt="Hasan" width="31%" height="260px" style="border-radius: 108%;margin-left: 458px;"></div> {% endcomment %}
+
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="apply_job_form white-bg">
+                        {% block content %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body%}
+

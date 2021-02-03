@@ -1,0 +1,50 @@
+.job_sumary{
+	text-align: right;
+	margin-top: 20px;
+}
+
+.job_sumary ul li span {
+	float: left;
+}
+.clear{
+	margin: 20px;
+}
+.col-lg-3{
+	display: inline-block;
+}
+.bradcam_text h3{
+	display: inline-block;
+}
+
+.bradcam_text h5{
+	display: inline-block;
+}
+
+.job_sumary .col-lg-3 img{
+	margin-right: 100px;
+
+}
+.header-area .main-header-area .main-menu ul li a h3:hover {
+	color: #00D363;
+}
+.header-area .main-header-area .main-menu ul li a h3{
+	color: #fff;
+	font-size: 15px;
+	text-transform: capitalize;
+	font-weight: 500;
+	display: inline-block;
+	padding: 35px 0px 35px 0px;
+	font-family: "Roboto", sans-serif;
+	position: relative;
+	text-transform: capitalize;
+  }
+.float-right{
+	float: right;
+}
+
+/* .bradcam_text{
+	text-align: center;
+} */
+
+
+

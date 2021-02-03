@@ -1,0 +1,131 @@
+
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+{% block body%}
+    <!-- bradcam_area  -->
+    <div class=" bradcam_bg_1"
+    style="
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0 0px 0;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    background-size: cover;
+">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        
+                        <!-- <h5> == > Code {{person_detail.codeEmploey}}</h5> -->
+						<div class="col-lg-3 img-center">
+                        <img src="{{ person_detail.صورة_شخصية.url }}" alt="Hasan" width="90%" height="235" style="border-radius: 108%;margin-left: 432px;"></div>
+                        
+                    </div>
+
+                    <h3 style=" width: 50%; margin-left: 450px; color:darkgreen;">{{person_detail}}</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area " 
+    style="
+    padding-top: 0px;
+    padding-bottom: 0px;
+">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="job_sumary">
+                        <div class="summery_header">
+                            <h3 class="text-center">البيانات السخصية</h3>
+                        </div>
+                        <div class="job_content">
+                            <ul>
+
+                                <li>الاسم :<span> {{ person_detail.nameArabic }}</span></li>
+                                <li>العنوان : <span>{{ person_detail.address }}</span></li>
+                                <li>الرقم القومي : <span>{{ person_detail.nationalCode }}</span></li>
+                                <li>رقم الموبايل : <span>{{ person_detail.mobileNum }}</span></li>
+                                <li>الإيميل : <span>{{ person_detail.email }}</span></li>
+                                <li> الديانة : <span>{{ person_detail.religion }}</span></li>
+                                <li>النوع : <span>{{ person_detail.sex }}</span></li>
+                                <li>الحالة الاجتماعية : <span>{{ person_detail.socialStatus }}</span></li>
+                                <li>تاريخ الميلاد : <span>{{ person_detail.birthDate }}</span></li>
+                                <a href="{% url 'person:add_vacation' person_detail.id %}" class="boxed-btn3">طلب الاجازة</a>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="job_sumary">
+                        <div class="summery_header">
+                            <h3 class="text-center">الحالة الوظيفية</h3>
+                        </div>
+                        <div class="job_content">
+                            <ul>
+
+                                <li>الدرجة الوظيفية :<span> {{ person_detail.dragaJops }}</span></li>
+                                <li>المسمي الوظيفي : <span>{{ person_detail.jop }}</span></li>
+                                <li>الادارة التابع لها : <span>{{ person_detail.management }}</span></li>
+                                <li>رقم التأميني : <span>{{ person_detail.numInsurance }}</span></li>
+                                <li>تأمين طبي : <span>{{ person_detail.healthInsurance }}</span></li>
+                                <li>حالة الملف : <span>{{ person_detail.fileStatus }}</span></li>
+                                <li>تاريخ التعيين : <span> {{ person_detail.dateOfHiring }}</span></li>
+                                <li>رصيد الاجازات : <span> {{ betwen }}</span></li>
+                                <li>الاجازات المستخدمة : <span> {{ count_vacation }}</span></li>
+                                <li> اجازات بدون مرتب : <span> {{ vacation_unavailable }}</span></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 ">
+                	<div class="job_sumary text-center">
+	                   <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.صورة_شهادة_ميلاد.url }}" width="120" height="125">
+                        </div>
+	                   <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.صورة_التجنيد.url }}" width="120" height="125">
+                        </div>
+	                   <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.شهادة_التخرج.url }}" width="120" height="125">
+                        </div>
+	                   <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.صورة_مباشرة_عمل.url }}" width="120" height="125">
+                        </div>
+	                   <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.صورة_فيش_جنائي.url }}" width="120" height="125">
+                        </div>
+	                   <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.صورة_اقرار_استلام_عمل.url }}" width="120" height="125">
+                        </div>
+                        <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.صورة_البطاقة.url }}" width="120" height="125">
+                        </div>
+	                   <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.صورة_كعب_عمل.url }}" width="120" height="125">
+                        </div>
+	                   <div class="col-lg-3 m-2">
+                        <img src="{{ person_detail.صورة_نموذج_111.url }}" width="120" height="125">
+                        </div>
+
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% endblock body%}
+
+
+

@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block body%}
+
+	<!-- bradcam_area  -->
+    <div class=" bradcam_bg_1"
+    style="
+    background-size: cover;
+    background-position: center;
+    padding: 205px 0 120px 0;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    background-size: cover;
+">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                    <a href="{% url 'person:all_emploeys' %}">
+                        {% comment %} <img class="" src="{% static 'img/logo .png' %}" alt="Hasan" width="35%" height="260px" style="border-radius: 108%;margin-left: 382px;"></div> {% endcomment %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <!-- job_listing_area_start  -->
+    <div class="job_listing_area ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="job_filter white-bg">
+                        <div class="form_inner white-bg">
+                            <h3 class="col-lg-3">Filter</h3>
+                             <h3 class="col-lg-3" style="color:#00D363">{{count_Emploey|length}}</h3>
+                            <form method="GET">
+								{% bootstrap_form filter.form %}
+								
+								<button  class="boxed-btn3 w-100 mt-2" type="submit">Reset</button>
+                            </form>
+                        </div>
+                        <div class="reset_btn">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    
+					{% for emploey in emploeys %}
+					<h3> <a href=""></a></h3>
+				
+                    <div class="job_lists m-0">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="single_jobs white-bg d-flex justify-content-between">
+                                    <div class="jobs_left d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="{{ emploey.صورة_شخصية.url }}" alt="Hasan" width="100%" height="60" >
+                                        </div>
+                                        <div class="jobs_conetent">
+                                            <a href="{% url 'person:emploey_details' emploey.id%}"><h4>{{emploey}}</h4></a>
+                                            <div class="links_locat d-flex align-items-center">
+                                                <div class="location mr-6">
+                                                    <p> <i class="fa fa-map-marker"></i> {{emploey.management}}</p>
+                                                </div>
+                                                <div class="location ">
+                                                    <p> <i class="fa fa-clock-o"></i> {{emploey.codeEmploey}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_right">
+                                        <div class="apply_now">
+                                            <a href="{% url 'person:emploey_details' emploey.id%}" class="boxed-btn3">البيانات</a>
+                                        </div>
+                                        <div class="date">
+                                            <p>{{emploey.dateOfHiring|date:"j M, Y"}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    {% endfor %}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                {% if emploeys.has_other_pages%}
+                                    <div class="pagination_wrap">
+                                        <ul>
+                                            {% if emploeys.has_previous %}
+                                                <li><a href="?page={{ emploeys.previous_page_number }}"> <i class="ti-angle-left"></i> </a></li>
+                                            {% endif %}
+
+                                            {% for i in emploeys.paginator.page_range %}
+                                                <li><a href="?page={{i}}"><span>{{i}}</span></a></li>
+                                            {% endfor%}
+
+                                            {% if emploeys.has_next %}
+                                                <li><a href="?page={{ emploeys.next_page_number }}"> <i class="ti-angle-right"></i> </a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job_listing_area_end  -->
+
+
+
+
+
+	{% endblock body%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
